@@ -1,16 +1,1245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadramout Yemen</title>
-    <style>
-        body { background-color: #0D0A07; color: #F5ECD7; font-family: sans-serif; text-align: center; padding: 20px; }
-        h1 { color: #C9932A; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadramout Yemeni Restaurant | Authentic Yemeni Cuisine in Cairo</title>
+<meta name="description" content="The Taste of Authentic Yemen — Right in the Heart of Cairo. Hand-cooked Mandi, Smoky Grills & Traditional Broths.">
+<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+<link href="[https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;800&display=swap)" rel="stylesheet">
+<style>
+/* ==================== VARIABLES ==================== */
+:root {
+--bg-dark: #0D0A07;
+--accent-gold: #C9932A;
+--accent-red: #8B2B1A;
+--surface: #1A1208;
+--text-primary: #F5ECD7;
+--text-muted: #9A8870;
+--font-ar: 'Amiri', serif;
+--font-en-head: 'Playfair Display', serif;
+--font-en-body: 'Inter', sans-serif;
+--nav-height: 80px;
+--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ==================== RESET & BASE ==================== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+background-color: var(--bg-dark);
+color: var(--text-primary);
+font-family: var(--font-en-body);
+line-height: 1.6;
+overflow-x: hidden;
+}
+.arabic {
+font-family: var(--font-ar);
+direction: rtl;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-en-head);
+font-weight: 700;
+line-height: 1.2;
+}
+h1 .arabic, h2 .arabic, h3 .arabic {
+font-family: var(--font-ar);
+font-weight: 700;
+}
+a {
+text-decoration: none;
+color: inherit;
+}
+ul {
+list-style: none;
+}
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+}
+section {
+padding: 100px 0;
+position: relative;
+}
+/* Section Dividers */
+.section-divider {
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+opacity: 0.3;
+width: 80%;
+margin: 0 auto;
+}
+/* ==================== UTILITIES ==================== */
+.text-center { text-align: center; }
+.gold-text { color: var(--accent-gold); }
+.red-text { color: var(--accent-red); }
+.muted-text { color: var(--text-muted); }
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 14px 28px;
+font-family: var(--font-en-body);
+font-weight: 600;
+border-radius: 4px;
+cursor: pointer;
+transition: var(--transition);
+border: 2px solid transparent;
+font-size: 1rem;
+}
+.btn-gold {
+background-color: var(--accent-gold);
+color: var(--bg-dark);
+animation: pulse-gold 2s infinite;
+}
+.btn-gold:hover {
+background-color: #dcb355;
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(201, 147, 42, 0.2);
+}
+.btn-outline-red {
+background-color: transparent;
+border-color: var(--accent-red);
+color: var(--text-primary);
+}
+.btn-outline-red:hover {
+background-color: var(--accent-red);
+transform: translateY(-2px);
+}
+.btn-whatsapp {
+background-color: #25D366;
+color: #fff;
+}
+.btn-whatsapp:hover {
+background-color: #1ebe57;
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+/* Animations */
+@keyframes pulse-gold {
+0% { box-shadow: 0 0 0 0 rgba(201, 147, 42, 0.7); }
+70% { box-shadow: 0 0 0 10px rgba(201, 147, 42, 0); }
+100% { box-shadow: 0 0 0 0 rgba(201, 147, 42, 0); }
+}
+.fade-in-up {
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+opacity: 1;
+transform: translateY(0);
+}
+/* ==================== NAVIGATION ==================== */
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: var(--nav-height);
+z-index: 1000;
+transition: var(--transition);
+display: flex;
+align-items: center;
+}
+header.scrolled {
+background: rgba(13, 10, 7, 0.85);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(201, 147, 42, 0.2);
+}
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+}
+.logo {
+text-align: center;
+display: flex;
+flex-direction: column;
+}
+.logo-ar {
+font-family: var(--font-ar);
+font-size: 1.8rem;
+color: var(--accent-gold);
+line-height: 1;
+}
+.logo-en {
+font-family: var(--font-en-head);
+font-size: 0.75rem;
+letter-spacing: 2px;
+color: var(--text-primary);
+text-transform: uppercase;
+}
+.nav-links {
+display: flex;
+align-items: center;
+gap: 2rem;
+}
+.nav-links a {
+font-size: 0.9rem;
+font-weight: 500;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: var(--transition);
+}
+.nav-links a:hover {
+color: var(--accent-gold);
+}
+.mobile-toggle {
+display: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--text-primary);
+}
+/* ==================== HERO SECTION ==================== */
+#hero {
+height: 100vh;
+min-height: 600px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+background: radial-gradient(circle at center, #2a0b07 0%, var(--bg-dark) 80%);
+overflow: hidden;
+padding: 0;
+}
+/* Particle Embers */
+#particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+.ember {
+position: absolute;
+bottom: -10px;
+background: var(--accent-gold);
+border-radius: 50%;
+filter: blur(2px);
+opacity: 0;
+animation: floatEmber linear infinite;
+}
+@keyframes floatEmber {
+0% { transform: translateY(0) scale(1); opacity: 1; }
+100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+max-width: 900px;
+padding: 0 20px;
+}
+.hero-title-ar {
+font-size: 4.5rem;
+color: var(--accent-gold);
+margin-bottom: 10px;
+text-shadow: 0 0 20px rgba(201, 147, 42, 0.3);
+animation: glowText 3s ease-in-out infinite alternate;
+}
+@keyframes glowText {
+from { text-shadow: 0 0 10px rgba(201, 147, 42, 0.2); }
+to { text-shadow: 0 0 30px rgba(201, 147, 42, 0.6), 0 0 10px rgba(139, 43, 26, 0.8); }
+}
+.hero-title-en {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+font-size: 1.2rem;
+color: var(--text-muted);
+margin-bottom: 2.5rem;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+}
+.hero-ctas {
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+margin-bottom: 3rem;
+}
+.trust-badges {
+display: flex;
+justify-content: center;
+gap: 2rem;
+flex-wrap: wrap;
+}
+.badge {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 0.9rem;
+background: rgba(26, 18, 8, 0.6);
+padding: 8px 16px;
+border-radius: 50px;
+border: 1px solid rgba(201, 147, 42, 0.2);
+}
+.scroll-indicator {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 2;
+animation: bounce 2s infinite;
+font-size: 1.5rem;
+color: var(--accent-gold);
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+40% { transform: translateY(-15px) translateX(-50%); }
+60% { transform: translateY(-7px) translateX(-50%); }
+}
+/* ==================== MENU SECTION ==================== */
+#menu {
+background-color: var(--bg-dark);
+background-image: radial-gradient(rgba(201, 147, 42, 0.05) 1px, transparent 1px);
+background-size: 30px 30px;
+}
+.section-header {
+text-align: center;
+margin-bottom: 4rem;
+}
+.section-header h2 {
+font-size: 2.5rem;
+margin-bottom: 0.5rem;
+}
+.section-header p {
+color: var(--text-muted);
+font-size: 1.1rem;
+}
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 2rem;
+}
+.menu-card {
+background: var(--surface);
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid rgba(201, 147, 42, 0.1);
+transition: var(--transition);
+display: flex;
+flex-direction: column;
+position: relative;
+}
+.menu-card:hover {
+transform: scale(1.03);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+border-color: rgba(201, 147, 42, 0.4);
+}
+.dish-image {
+height: 200px;
+background: linear-gradient(135deg, var(--surface) 0%, #2a1c10 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 5rem;
+position: relative;
+}
+.dish-badge {
+position: absolute;
+top: 15px;
+right: 15px;
+padding: 5px 12px;
+border-radius: 4px;
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 1px;
+z-index: 2;
+}
+.badge-bestseller {
+background: var(--accent-gold);
+color: var(--bg-dark);
+}
+.badge-spicy {
+background: var(--accent-red);
+color: #fff;
+}
+.dish-content {
+padding: 1.5rem;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+}
+.dish-title {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 0.5rem;
+}
+.dish-title-ar {
+font-size: 1.5rem;
+color: var(--accent-gold);
+}
+.dish-title-en {
+font-size: 1.2rem;
+font-family: var(--font-en-head);
+}
+.dish-desc {
+color: var(--text-muted);
+font-size: 0.95rem;
+margin-bottom: 1.5rem;
+flex-grow: 1;
+}
+.dish-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-top: 1px solid rgba(255,255,255,0.05);
+padding-top: 1rem;
+}
+.dish-price {
+font-weight: 600;
+color: var(--text-primary);
+}
+.btn-order-micro {
+background: transparent;
+color: var(--accent-gold);
+border: 1px solid var(--accent-gold);
+padding: 6px 12px;
+border-radius: 4px;
+font-size: 0.85rem;
+transition: var(--transition);
+}
+.btn-order-micro:hover {
+background: var(--accent-gold);
+color: var(--bg-dark);
+}
+.menu-banner {
+margin-top: 4rem;
+background: rgba(139, 43, 26, 0.1);
+border: 1px solid rgba(139, 43, 26, 0.3);
+border-radius: 8px;
+padding: 2rem;
+text-align: center;
+}
+.menu-banner h3 {
+margin-bottom: 1.5rem;
+font-size: 1.3rem;
+}
+/* ==================== WHY CHOOSE US ==================== */
+#why-us {
+background-color: #0f0b08;
+position: relative;
+}
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+margin-bottom: 5rem;
+}
+.stat-item {
+text-align: center;
+}
+.stat-icon {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+}
+.stat-number {
+font-size: 2.5rem;
+font-family: var(--font-en-head);
+color: var(--accent-gold);
+font-weight: 700;
+margin-bottom: 0.5rem;
+}
+.stat-label {
+color: var(--text-muted);
+font-size: 0.95rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.reviews-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+.review-card {
+background: rgba(26, 18, 8, 0.8);
+border: 1px solid rgba(201, 147, 42, 0.2);
+padding: 2rem;
+border-radius: 8px;
+position: relative;
+}
+.review-card::before {
+content: "❝";
+position: absolute;
+top: -10px;
+left: 20px;
+font-size: 4rem;
+color: rgba(201, 147, 42, 0.1);
+font-family: var(--font-en-head);
+}
+.stars {
+color: var(--accent-gold);
+margin-bottom: 1rem;
+font-size: 1.2rem;
+}
+.review-text {
+font-style: italic;
+margin-bottom: 1.5rem;
+font-size: 1.05rem;
+}
+.review-author {
+font-weight: 600;
+color: var(--accent-gold);
+font-size: 0.9rem;
+}
+/* ==================== OUR STORY ==================== */
+#story {
+background: var(--bg-dark);
+}
+.story-wrapper {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+}
+.story-visual {
+position: relative;
+height: 500px;
+background: linear-gradient(rgba(13, 10, 7, 0.4), rgba(13, 10, 7, 0.4)),
+repeating-linear-gradient(45deg, rgba(201, 147, 42, 0.05) 0, rgba(201, 147, 42, 0.05) 2px, transparent 2px, transparent 15px);
+border: 2px solid var(--accent-gold);
+border-radius: 250px 250px 0 0; /* Islamic Arch */
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+.story-visual::after {
+content: "🍲";
+font-size: 8rem;
+opacity: 0.5;
+filter: drop-shadow(0 0 20px var(--accent-gold));
+}
+.story-content h2 {
+font-size: 2.2rem;
+margin-bottom: 0.5rem;
+}
+.story-content .arabic-head {
+font-size: 2.5rem;
+color: var(--accent-gold);
+margin-bottom: 2rem;
+display: block;
+}
+.story-content p {
+margin-bottom: 1.5rem;
+color: var(--text-muted);
+font-size: 1.05rem;
+}
+.pull-quote {
+margin-top: 3rem;
+padding-left: 2rem;
+border-left: 3px solid var(--accent-gold);
+}
+.pull-quote .arabic {
+font-size: 1.8rem;
+color: var(--text-primary);
+margin-bottom: 0.5rem;
+}
+.pull-quote .english {
+font-family: var(--font-en-head);
+font-style: italic;
+color: var(--accent-gold);
+}
+/* ==================== GALLERY ==================== */
+#gallery {
+background-color: #0f0b08;
+}
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 15px;
+margin-bottom: 3rem;
+}
+.gallery-item {
+position: relative;
+border-radius: 8px;
+overflow: hidden;
+aspect-ratio: 1 / 1;
+background: linear-gradient(135deg, var(--surface) 0%, #2a1c10 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+border: 1px solid transparent;
+transition: var(--transition);
+}
+.gallery-item:nth-child(even) {
+transform: translateY(20px); /* Staggered look */
+}
+.gallery-icon {
+font-size: 4rem;
+transition: var(--transition);
+}
+.gallery-overlay {
+position: absolute;
+inset: 0;
+background: rgba(13, 10, 7, 0.8);
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transition: var(--transition);
+padding: 1rem;
+text-align: center;
+}
+.gallery-overlay span {
+font-family: var(--font-en-head);
+font-size: 1.2rem;
+color: var(--accent-gold);
+transform: translateY(20px);
+transition: var(--transition);
+}
+.gallery-item:hover {
+border-color: var(--accent-gold);
+box-shadow: 0 10px 20px rgba(201, 147, 42, 0.15);
+}
+.gallery-item:hover .gallery-icon {
+transform: scale(1.1);
+}
+.gallery-item:hover .gallery-overlay {
+opacity: 1;
+}
+.gallery-item:hover .gallery-overlay span {
+transform: translateY(0);
+}
+.social-follow {
+text-align: center;
+margin-top: 4rem;
+}
+/* ==================== ORDER & FIND US ==================== */
+#order-find {
+background: var(--bg-dark);
+background-image: linear-gradient(rgba(201, 147, 42, 0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(201, 147, 42, 0.03) 1px, transparent 1px);
+background-size: 50px 50px;
+}
+.order-find-wrapper {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+}
+.order-options h2 {
+font-size: 2.5rem;
+margin-bottom: 2rem;
+}
+.order-btns {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+.btn-large {
+padding: 18px 30px;
+font-size: 1.1rem;
+justify-content: flex-start;
+border-radius: 8px;
+}
+.btn-talabat {
+background: #FF5A00;
+color: #fff;
+border: none;
+}
+.btn-talabat:hover {
+background: #e65100;
+transform: translateY(-2px);
+}
+.btn-elmenus {
+background: #E2001A;
+color: #fff;
+border: none;
+}
+.btn-elmenus:hover {
+background: #cc0017;
+transform: translateY(-2px);
+}
+.dine-in-note {
+margin-top: 2rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(201, 147, 42, 0.2);
+color: var(--text-muted);
+font-style: italic;
+}
+.location-card {
+background: rgba(26, 18, 8, 0.8);
+border: 1px solid var(--accent-gold);
+border-radius: 8px;
+padding: 2rem;
+backdrop-filter: blur(10px);
+}
+.loc-details {
+margin-bottom: 2rem;
+}
+.loc-item {
+display: flex;
+gap: 15px;
+margin-bottom: 1.5rem;
+}
+.loc-icon {
+font-size: 1.5rem;
+}
+.loc-text h4 {
+color: var(--accent-gold);
+margin-bottom: 0.2rem;
+}
+.loc-text p, .loc-text a {
+color: var(--text-primary);
+font-size: 0.95rem;
+}
+.loc-text a:hover {
+color: var(--accent-gold);
+}
+.map-container {
+width: 100%;
+height: 250px;
+border-radius: 4px;
+overflow: hidden;
+border: 1px solid rgba(255,255,255,0.1);
+}
+.map-container iframe {
+width: 100%;
+height: 100%;
+border: none;
+}
+/* ==================== FOOTER ==================== */
+footer {
+background: #080604;
+padding: 4rem 0 2rem;
+border-top: 2px solid var(--accent-gold);
+position: relative;
+}
+.footer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 3rem;
+margin-bottom: 3rem;
+}
+.footer-col h3 {
+color: var(--accent-gold);
+margin-bottom: 1.5rem;
+font-size: 1.2rem;
+}
+.footer-links {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+}
+.footer-links a {
+color: var(--text-muted);
+transition: var(--transition);
+}
+.footer-links a:hover {
+color: var(--accent-gold);
+padding-left: 5px;
+}
+.social-icons {
+display: flex;
+gap: 15px;
+}
+.social-icon {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: var(--surface);
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgba(201, 147, 42, 0.3);
+transition: var(--transition);
+font-size: 1.2rem;
+}
+.social-icon:hover {
+background: var(--accent-gold);
+color: var(--bg-dark);
+transform: translateY(-3px);
+}
+.footer-bottom {
+text-align: center;
+padding-top: 2rem;
+border-top: 1px solid rgba(255,255,255,0.05);
+color: var(--text-muted);
+font-size: 0.9rem;
+}
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+.story-wrapper, .order-find-wrapper {
+grid-template-columns: 1fr;
+}
+.story-visual {
+height: 300px;
+border-radius: 150px 150px 0 0;
+}
+.hero-title-ar { font-size: 3.5rem; }
+.hero-title-en { font-size: 2rem; }
+}
+@media (max-width: 768px) {
+.nav-links {
+position: fixed;
+top: var(--nav-height);
+right: -100%;
+width: 70%;
+height: calc(100vh - var(--nav-height));
+background: var(--surface);
+flex-direction: column;
+padding: 2rem;
+transition: var(--transition);
+border-left: 1px solid var(--accent-gold);
+align-items: flex-start;
+}
+.nav-links.active {
+right: 0;
+}
+.mobile-toggle {
+display: block;
+}
+.hero-ctas {
+flex-direction: column;
+}
+.hero-title-ar { font-size: 2.8rem; }
+.hero-title-en { font-size: 1.5rem; }
+.trust-badges { flex-direction: column; align-items: center; gap: 10px; }
+.gallery-item:nth-child(even) { transform: none; }
+}
+</style>
 </head>
 <body>
-    <h1>Hadramout Yemen</h1>
-    <p>Welcome to our restaurant. Our menu is coming soon!</p>
-</body>
-</html>
+<header id="navbar">
+<div class="nav-container">
+<a href="#" class="logo">
+<span class="logo-ar">حضرموت اليمن</span>
+<span class="logo-en">Hadramout Yemen</span>
+</a>
+<nav class="nav-links" id="navLinks">
+<a href="#hero">Home</a>
+<a href="#menu">Menu</a>
+<a href="#why-us">Why Us</a>
+<a href="#story">Our Story</a>
+<a href="#gallery">Gallery</a>
+<a href="#order-find">Find Us</a>
+<a href="[https://wa.me/201000000000](https://wa.me/201000000000)" class="btn btn-gold" target="_blank" style="color: #0D0A07; margin-top: 10px;">Order Now</a>
+</nav>
+<div class="mobile-toggle" id="mobileToggle">
+☰
+</div>
+</div>
+</header>
+<section id="hero">
+<div id="particles"></div>
+<div class="hero-content fade-in-up">
+<h1 class="hero-title">
+<div class="arabic hero-title-ar" lang="ar" dir="rtl">مذاق اليمن الأصيل</div>
+<div class="hero-title-en">The Authentic Taste of Yemen</div>
+</h1>
+<p class="hero-subtitle">
+Hand-cooked Mandi, Smoky Grills & Traditional Broths — Served Daily in Nasr City, Cairo
+</p>
+<div class="hero-ctas">
+<a href="#menu" class="btn btn-gold">🍽️ View Our Menu</a>
+<a href="[https://wa.me/201000000000](https://wa.me/201000000000)" class="btn btn-outline-red" target="_blank">📦 Order on WhatsApp</a>
+</div>
+<div class="trust-badges">
+<div class="badge">⭐ Authentic Yemeni Recipes</div>
+<div class="badge">🔥 Charcoal-Grilled Daily</div>
+<div class="badge">🚚 Fast Cairo Delivery</div>
+</div>
+</div>
+<a href="#menu" class="scroll-indicator">↓</a>
+</section>
+<section id="menu">
+<div class="container">
+<div class="section-header fade-in-up">
+<h2><span class="arabic" lang="ar" dir="rtl">أشهر أطباقنا</span> 
+ Our Signature Dishes</h2>
+<p>Every dish tells a story from the ancient kitchens of Hadramout</p>
+</div>
+<div class="menu-grid">
+<div class="menu-card fade-in-up">
+<div class="dish-image">🍗</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Chicken Mandi</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">مندي الدجاج</h3>
+</div>
+<p class="dish-desc">Slow-smoked whole chicken on a mountain of fragrant saffron rice.</p>
+<div class="dish-footer">
+<span class="dish-price">From 180 EGP</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Chicken Mandi" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+<div class="menu-card fade-in-up">
+<div class="dish-badge badge-bestseller">BESTSELLER</div>
+<div class="dish-image">🍖</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Mutton Mandi</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">مندي اللحم</h3>
+</div>
+<p class="dish-desc">Tender slow-cooked lamb, kissed by embers for 6+ hours.</p>
+<div class="dish-footer">
+<span class="dish-price">From 350 EGP</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Mutton Mandi" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+<div class="menu-card fade-in-up">
+<div class="dish-image">🍛</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Meat Kabsa</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">كبسة اللحم</h3>
+</div>
+<p class="dish-desc">Spiced Arabian rice with slow-braised beef, raisins & fried onions.</p>
+<div class="dish-footer">
+<span class="dish-price">From 320 EGP</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Meat Kabsa" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+<div class="menu-card fade-in-up">
+<div class="dish-image">🍲</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Fahsa</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">فحسة</h3>
+</div>
+<p class="dish-desc">A fiery lamb stew in a volcanic stone pot — the soul of Yemen.</p>
+<div class="dish-footer">
+<span class="dish-price">From 250 EGP</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Fahsa" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+<div class="menu-card fade-in-up">
+<div class="dish-badge badge-spicy">🌶️ SPICY</div>
+<div class="dish-image">🥣</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Saltah</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">سلتة</h3>
+</div>
+<p class="dish-desc">Yemen's national dish — rich fenugreek broth with slow-cooked lamb.</p>
+<div class="dish-footer">
+<span class="dish-price">From 220 EGP</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Saltah" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+<div class="menu-card fade-in-up">
+<div class="dish-image">🍢</div>
+<div class="dish-content">
+<div class="dish-title">
+<h3 class="dish-title-en">Mixed Grill</h3>
+<h3 class="arabic dish-title-ar" lang="ar" dir="rtl">مشويات مشكلة</h3>
+</div>
+<p class="dish-desc">A feast of charcoal-grilled meats for the whole table.</p>
+<div class="dish-footer">
+<span class="dish-price">From 450 EGP/kg</span>
+<a href="[https://wa.me/201000000000?text=I'd](https://wa.me/201000000000?text=I'd) like to order Mixed Grill" target="_blank" class="btn-order-micro">Order This</a>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-banner fade-in-up">
+<h3>🔥 All rice dishes served with fresh Yemeni bread, salad & sahawiq sauce</h3>
+<a href="[https://wa.me/201000000000](https://wa.me/201000000000)" class="btn btn-whatsapp" target="_blank">📲 Order Full Menu via WhatsApp</a>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<section id="why-us">
+<div class="container">
+<div class="stats-grid fade-in-up">
+<div class="stat-item">
+<div class="stat-icon">🍖</div>
+<div class="stat-number" data-target="10">0</div>
+<div class="stat-label">Years of Tradition</div>
+</div>
+<div class="stat-item">
+<div class="stat-icon">👨‍🍳</div>
+<div class="stat-number" data-target="100">0</div>
+<div class="stat-label">% Authentic Recipes</div>
+</div>
+<div class="stat-item">
+<div class="stat-icon">🌍</div>
+<div class="stat-number" data-target="1">0</div>
+<div class="stat-label">Location in Cairo</div>
+</div>
+<div class="stat-item">
+<div class="stat-icon">⭐</div>
+<div class="stat-number" data-target="5000">0</div>
+<div class="stat-label">Happy Guests</div>
+</div>
+</div>
+<div class="reviews-container fade-in-up">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p class="review-text arabic" lang="ar" dir="rtl">"أحسن مندي في القاهرة بدون منازع — الدجاج طاح من العظم"</p>
+<p class="review-author">— Ahmed M., Nasr City</p>
+</div>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p class="review-text">"Authentic Yemeni food that takes you straight to Sana'a. The Fahsa was unbelievable."</p>
+<p class="review-author">— Sarah K.</p>
+</div>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p class="review-text arabic" lang="ar" dir="rtl">"المكان ده بيجنن، الأكل طازج والخدمة سريعة. هنرجع تاني أكيد"</p>
+<p class="review-author">— Mohamed & Family</p>
+</div>
+</div>
+</div>
+</section>
+<section id="story">
+<div class="container">
+<div class="story-wrapper">
+<div class="story-visual fade-in-up">
+</div>
+<div class="story-content fade-in-up">
+<h2>From the Valleys of Hadramout to the Heart of Cairo</h2>
+<span class="arabic arabic-head" lang="ar" dir="rtl">من وادي حضرموت إلى قلب القاهرة</span>
+<p>Our journey began with a simple desire: to preserve the authentic flavors of Yemen and share them with the world. Grounded in family recipes passed down through generations, Hadramout Yemen stands as a culinary bridge between the ancient kitchens of the homeland and the vibrant streets of Cairo.</p>
+<p>We believe there are no shortcuts to true flavor. That’s why our meats are slow-cooked over burning embers for hours, our spices are hand-blended daily, and our bread is baked fresh in traditional clay ovens. Every dish is a testament to our commitment to quality, heritage, and genuine hospitality.</p>
+<div class="pull-quote">
+<div class="arabic" lang="ar" dir="rtl">"نطبخ بالحب، ونقدم بالضيافة اليمنية الأصيلة"</div>
+<div class="english">"We cook with love, and serve with the warmth of Yemeni hospitality."</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="container">
+<div class="section-header fade-in-up">
+<h2><span class="arabic" lang="ar" dir="rtl">متعة بصرية قبل الأكل</span> 
+ A Feast for the Eyes</h2>
+</div>
+<div class="gallery-grid fade-in-up">
+<div class="gallery-item"><div class="gallery-icon">🍗</div><div class="gallery-overlay"><span>Golden Mandi</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🥩</div><div class="gallery-overlay"><span>Charcoal Grills</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🍲</div><div class="gallery-overlay"><span>Bubbling Fahsa</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🥙</div><div class="gallery-overlay"><span>Fresh Malawah Bread</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🥗</div><div class="gallery-overlay"><span>Spicy Sahawiq</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🍚</div><div class="gallery-overlay"><span>Fragrant Saffron Rice</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">🥣</div><div class="gallery-overlay"><span>Traditional Saltah</span></div></div>
+<div class="gallery-item"><div class="gallery-icon">☕</div><div class="gallery-overlay"><span>Yemeni Tea</span></div></div>
+</div>
+<div class="social-follow fade-in-up">
+<p class="muted-text mb-3">📸 Follow us for daily food shots</p>
+<a href="#" class="btn btn-outline-red">@HadramoutYemen</a>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<section id="order-find">
+<div class="container">
+<div class="order-find-wrapper">
+<div class="order-options fade-in-up">
+<h2>Ready to Order?</h2>
+<div class="order-btns">
+<a href="[https://wa.me/201000000000](https://wa.me/201000000000)" class="btn btn-whatsapp btn-large" target="_blank">
+<span style="font-size: 1.5rem;">📲</span> Order Direct on WhatsApp
+</a>
+<button class="btn btn-talabat btn-large">
+🛒 Order on Talabat
+</button>
+<button class="btn btn-elmenus btn-large">
+🛵 Order on Elmenus
+</button>
+</div>
+<div class="dine-in-note">
+<p>Or visit us in Nasr City — walk-ins always welcome. Experience the true warmth of Yemeni hospitality in person.</p>
+</div>
+</div>
+<div class="location-card fade-in-up">
+<div class="loc-details">
+<div class="loc-item">
+<div class="loc-icon">📍</div>
+<div class="loc-text">
+<h4>Address</h4>
+<p class="arabic" lang="ar" dir="rtl" style="margin-bottom: 5px;">50 عمارات السويسري (ب)، شارع أحمد الزمر</p>
+<p>50 Swiss Bldgs (B), Ahmed El-Zomor St, Al Hay Al Asher, Nasr City, Cairo 11765</p>
+</div>
+</div>
+<div class="loc-item">
+<div class="loc-icon">🕐</div>
+<div class="loc-text">
+<h4>Working Hours</h4>
+<p>Daily: 12:00 PM – 2:00 AM</p>
+</div>
+</div>
+<div class="loc-item">
+<div class="loc-icon">📞</div>
+<div class="loc-text">
+<h4>Phone</h4>
+<a href="tel:+201000000000">+20 10 0000 0000</a>
+</div>
+</div>
+</div>
+<a href="[https://maps.google.com/maps?q=30.0626,31.3427](https://maps.google.com/maps?q=30.0626,31.3427)" target="_blank" class="btn btn-gold" style="width: 100%; margin-bottom: 15px;">Get Directions</a>
+<div class="map-container">
+<iframe src="[https://maps.google.com/maps?q=30.0626,31.3427&hl=en&z=15&output=embed](https://maps.google.com/maps?q=30.0626,31.3427&hl=en&z=15&output=embed)" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer id="footer">
+<div class="container">
+<div class="text-center" style="margin-bottom: 3rem;">
+<h2 class="arabic gold-text" lang="ar" dir="rtl" style="font-size: 2rem;">حضرموت اليمن</h2>
+<p class="muted-text" style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-top: 5px;">Hadramout Yemen</p>
+</div>
+<div class="footer-grid fade-in-up">
+<div class="footer-col">
+<h3>Quick Links</h3>
+<div class="footer-links">
+<a href="#hero">Home</a>
+<a href="#menu">Our Menu</a>
+<a href="#story">Our Story</a>
+<a href="#gallery">Gallery</a>
+<a href="#order-find">Order Now</a>
+</div>
+</div>
+<div class="footer-col">
+<h3>Contact Us</h3>
+<div class="footer-links">
+<a href="[https://maps.google.com/maps?q=30.0626,31.3427](https://maps.google.com/maps?q=30.0626,31.3427)" target="_blank">Nasr City, Cairo</a>
+<a href="tel:+201000000000">+20 10 0000 0000</a>
+<a href="#">Daily: 12:00 PM – 2:00 AM</a>
+</div>
+</div>
+<div class="footer-col">
+<h3>Follow Our Food</h3>
+<div class="social-icons">
+<a href="#" class="social-icon">In</a>
+<a href="#" class="social-icon">Fb</a>
+<a href="#" class="social-icon">Tk</a>
+<a href="[https://wa.me/201000000000](https://wa.me/201000000000)" target="_blank" class="social-icon">Wa</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Hadramout Yemen — All Rights Reserved | Nasr City, Cairo, Egypt</p>
+<p class="arabic" lang="ar" dir="rtl" style="margin-top: 5px;">جميع الحقوق محفوظة - حضرموت اليمن</p>
+</div>
+</div>
+</footer>
+<script>
+// 1. Mobile Menu Toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+mobileToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+// Close mobile menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+navLinks.classList.remove('active');
+mobileToggle.innerHTML = '☰';
+});
+});
+// 2. Sticky Navbar & Scroll Blur
+const header = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}
+});
+// 3. Intersection Observer for Fade-in Animations
+const fadeElements = document.querySelectorAll('.fade-in-up');
+const observerOptions = {
+threshold: 0.1,
+rootMargin: "0px 0px -50px 0px"
+};
+const observer = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+fadeElements.forEach(el => observer.observe(el));
+// 4. Counter Animation (Count Up)
+const counters = document.querySelectorAll('.stat-number');
+let hasCounted = false;
+const counterObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting && !hasCounted) {
+hasCounted = true;
+counters.forEach(counter => {
+const target = +counter.getAttribute('data-target');
+const duration = 2000; // ms
+const increment = target / (duration / 16); // 60fps
+let current = 0;
+const updateCounter = () => {
+current += increment;
+if (current < target) {
+counter.innerText = Math.ceil(current) + (target > 1000 ? '+' : '');
+requestAnimationFrame(updateCounter);
+} else {
+counter.innerText = target + (target > 10 ? '+' : '');
+}
+};
+updateCounter();
+});
+}
+});
+}, { threshold: 0.5 });
+const whyUsSection = document.getElementById('why-us');
+if (whyUsSection) counterObserver.observe(whyUsSection);
+// 5. CSS Particle Embers Generation (No heavy libraries)
+const particlesContainer = document.getElementById('particles');
+const particleCount = 30;
+for (let i = 0; i < particleCount; i++) {
+const ember = document.createElement('div');
+ember.classList.add('ember');
+// Random properties
+const size = Math.random() * 5 + 2; // 2px to 7px
+const left = Math.random() * 100; // 0% to 100%
+const duration = Math.random() * 4 + 3; // 3s to 7s
+const delay = Math.random() * 5; // 0s to 5s
+// 5. CSS Particle Embers Generation (Fixed)
+const particlesContainer = document.getElementById('particles');
+const particleCount = 30;
+for (let i = 0; i < particleCount; i++) {
+    const ember = document.createElement('div');
+    ember.classList.add('ember');
+    // Random properties
+    const size = Math.random() * 5 + 2;
+    const left = Math.random() * 100;
+    const duration = Math.random() * 4 + 3;
+    const delay = Math.random() * 5;
+    
+    ember.style.width = size + "px";
+    ember.style.height = size + "px";
+    ember.style.left = left + "%";
+    ember.style.animationDuration = duration + "s";
+    ember.style.animationDelay = delay + "s";
+    particlesContainer.appendChild(ember);
+}
